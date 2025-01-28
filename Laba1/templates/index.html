@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регуляция контрастности изображения</title>
+</head>
+<body>
+    <h1>Загрузите изображение для настройки контрастности</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.file.label }}<br>
+            {{ form.file() }}
+        </p>
+        <p>
+            {{ form.contrast_level.label }}<br>
+            {{ form.contrast_level() }}
+        </p>
+        <p>
+            {{ form.recaptcha() }}
+            {% for error in form.recaptcha.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+</body>
+</html>

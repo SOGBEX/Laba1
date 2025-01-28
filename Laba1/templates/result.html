@@ -1,0 +1,29 @@
+﻿<style>
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат настройки контрастности</title>
+</head>
+
+<body>
+    <h1>Результат настройки контрастности</h1>
+    <h2>Оригинальное изображение</h2>
+    <img src="{{ original_image }}" height="800" width="800" alt="Original Image">
+
+    <h2>Обработанное изображение</h2>
+    <img src="{{ enhanced_image }}" height="800" width="800" alt="Enhanced Image">
+
+    <h2>Графики распределения цветов</h2>
+    <img src="{{ url_for('static', filename='uploads/color_distribution.png') }}" alt="Color Distribution Graphs">
+
+    <a href="{{ url_for('index') }}">Загрузите другое изображение</a>
+</body>
+</html>
